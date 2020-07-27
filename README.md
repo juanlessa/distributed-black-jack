@@ -1,8 +1,8 @@
 # Distributed BlackJack
 This is a BlackJack game that I developed for the distributed computing class
 
-#how to play?
-This game was configured to be played in localhost
+# how to play?
+This game was configured to be played in localhost\n
 So to play you need: 
   one terminal to be de deck of cards
   $ python3 deck.py
