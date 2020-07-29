@@ -192,7 +192,15 @@ def main(self_port, players_ports):
                     self_cards.append(c)
                     current_score = score(self_cards)
                     initial_round = False
-                
+                if last_card == 1:
+                    last_card = get_card()
+                    if last_card == "U":
+                        inform_players("U", players_connection)
+                        print(f"\033[31m[*] deck.py is not active now\033[m")
+                        selector.unregister(sock)
+                        selector.close()
+                        sock.close()
+                        exit(1)
                 #get my move
                 if last_card != "":
                     self_cards.append(last_card)
@@ -202,14 +210,7 @@ def main(self_port, players_ports):
                 jogada = interact_with_user1(self_cards)
                 players_moves.append([current_player, jogada])
                 if jogada == "H":           #ask a card
-                    last_card = get_card()
-                    if last_card == "U":
-                        inform_players("U", players_connection)
-                        print(f"\033[31m[*] deck.py is not active now\033[m")
-                        selector.unregister(sock)
-                        selector.close()
-                        sock.close()
-                        exit(1)
+                    last_card = 1
                     inform_players("H", players_connection)     #"H" == hit
                     print("\033[33m[*] wait othors playars\033[m")
                 elif jogada == "S" :        #stand
@@ -315,16 +316,24 @@ def main(self_port, players_ports):
         #sequence of played cards
         played_cards = []
         initial_round = True
+        next_move = []
+        for i in range(len(players_connection)):
+            next_move.append(0)
         for player, j in players_moves:
             if initial_round:
                 played_cards.append(players_score[player][2].pop(0))
                 played_cards.append(players_score[player][2].pop(0))
-            if (j == "H") and len(players_score[player][2]) != 0:
+            if next_move[player] == 1:
                 played_cards.append(players_score[player][2].pop(0))
+            if (j == "H") and len(players_score[player][2]) != 0:
+                next_move[player] = 1
             if (player == len(players_score)-1) and initial_round:
                 initial_round = False
         #calculate hash code
+        print(played_cards)
         played_hash = hashlib.md5(f'{played_cards}'.encode('utf-8')).hexdigest()
+        print(played_hash)
+        print(deck_hash)
         if str(deck_hash).strip() == str(played_hash).strip():
             inform_players("O", players_connection[0:-2])
         else:
