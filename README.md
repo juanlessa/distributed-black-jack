@@ -13,7 +13,9 @@
 ##### $ python3 player.py -s 1400 -p 1100 1200 1300    
   -s or --self is your port  
 -p or --players are the other players ports    
-[! [vídeo de demonstração do jogo] (http://img.youtube.com/vi/1x4Q0_yfiO8/0.jpg)] (http://www.youtube.com/watch?v=1x4Q0_yfiO8 "Black Jack distribuído - exemplo 1 ")
+  
+  #### This video is a quick demonstration of game
+[![vídeo de demonstração do jogo](http://img.youtube.com/vi/1x4Q0_yfiO8/0.jpg)](https://www.youtube.com/watch?v=1x4Q0_yfiO8 "Black Jack distribuído - exemplo 1")
 
     
  * You can use one or more bad_player.py to be able to cheating in game  
