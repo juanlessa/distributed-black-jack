@@ -6,7 +6,7 @@
  So to play you need:  
 * One terminal to be de deck of cards  
 ##### $ python3 deck.py  
- *  Tow or more terminal to be the players  
+ * Two or more terminal to be the players  
 ##### $ python3 player.py -s 1100 -p 1200 1300 1400  
 ##### $ python3 player.py -s 1200 -p 1100 1300 1400  
 ##### $ python3 player.py -s 1300 -p 1100 1200 1400  
