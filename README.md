@@ -15,7 +15,7 @@
 -p or --players are the other players ports    
   
   #### This video is a quick demonstration of game
-[![vídeo de demonstração do jogo](http://img.youtube.com/vi/1x4Q0_yfiO8/0.jpg)](https://www.youtube.com/watch?v=1x4Q0_yfiO8 "Black Jack distribuído - exemplo 1")
+[![ this is the video demonstrating a game match](http://img.youtube.com/vi/a7zL75LsvI0/0.jpg)](http://www.youtube.com/watch?v=a7zL75LsvI0 "Distributed Black Jack - Game Demonstration")
 
     
  * You can use one or more bad_player.py to be able to cheating in game  
