@@ -4,7 +4,7 @@
 ## how to play?
  This game was configured to be played in localhost  
  So to play you need:  
-* One terminal to be de deck of cards  
+* One terminal to be the deck of cards  
 ##### $ python3 deck.py  
  * Two or more terminal to be the players  
 ##### $ python3 player.py -s 1100 -p 1200 1300 1400  
